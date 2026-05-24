@@ -1,0 +1,18 @@
+def pruefe_bestellungen(bestellungen):
+    i = 0
+
+    while i < len(bestellungen):
+        bestellung = bestellungen[i]
+
+        if bestellung["status"] == "neu":
+            bearbeite(bestellung)
+
+        elif bestellung["status"] == "storniert":
+            storniere(bestellung)
+
+        else:
+            pruefe_manuell(bestellung)
+
+        i += 1
+
+    return "fertig"
